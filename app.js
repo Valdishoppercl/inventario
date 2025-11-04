@@ -1,7 +1,7 @@
 /* Frontend QR Inventory MVP */
 
 // CONFIG ————> REEMPLAZA:
-const WEBAPP_URL = 'https://script.google.com/a/macros/valdishopper.com/s/AKfycbw2HKktNKh0YdNlgyW9iHet75x-kCvTRkmEAD5iga4GpVKg_Q1glMc2o9XAqcKf5GbW_g/exec_URL';
+const WEBAPP_URL = 'https://script.google.com/a/macros/valdishopper.com/s/AKfycbwNSzS1Si-s-udLFkyYQjFjIjwiZESDdS29WHDmI5MVQe1IO5Uxi_lSNuD7OX9I5hLJTA/exec';
 const ALLOWED_DOMAIN = 'valdishopper.com';
 
 let currentUser = null;
