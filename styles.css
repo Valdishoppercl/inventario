@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: #0b1220; color: #e5e7eb;
+}
+header, footer {
+  padding: 16px 20px;
+  background: #0f172a;
+  border-bottom: 1px solid #1f2937;
+}
+h1 { margin: 0 0 8px; font-size: 20px; }
+main { padding: 20px; max-width: 980px; margin: 0 auto; }
+.card {
+  background: #111827; border: 1px solid #1f2937;
+  border-radius: 12px; padding: 16px; margin-bottom: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+label { display:block; font-size: 12px; color: #9ca3af; margin-bottom: 6px; }
+select, input, textarea, button {
+  width: 100%; padding: 10px 12px; border-radius: 8px;
+  border: 1px solid #374151; background: #0b1220; color: #e5e7eb;
+}
+textarea { min-height: 70px; }
+button { cursor: pointer; }
+video#preview {
+  width: 100%; max-height: 360px; background: #0b1220; border: 1px dashed #374151; border-radius: 10px; margin-top: 12px;
+}
+.status { margin-top: 10px; font-size: 14px; }
+.status.ok { color: #10b981; }
+.status.error { color: #f59e0b; }
+.queue { margin-top: 10px; white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+footer { border-top: 1px solid #1f2937; border-bottom: none; }
+@media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }

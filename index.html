@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>QR Inventario MVP</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://unpkg.com/@zxing/library@latest"></script>
+</head>
+<body>
+  <header>
+    <h1>Inventario QR — Warehouse & Sucursales</h1>
+    <div id="signin"></div>
+    <div id="userInfo"></div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Modo de escaneo</h2>
+      <select id="mode">
+        <option value="IN_WAREHOUSE">Entrada a Bodega (Warehouse)</option>
+        <option value="OUT_TO_BRANCH">Despacho a Sucursal</option>
+        <option value="IN_BRANCH">Recepción en Sucursal</option>
+        <option value="OUT_TO_PROVIDER">Entrega a Prestador</option>
+        <option value="RETURN_TO_WAREHOUSE">Devolución a Bodega</option>
+      </select>
+
+      <div class="grid">
+        <div>
+          <label>Desde (opcional)</label>
+          <select id="fromType">
+            <option value="">—</option>
+            <option value="WAREHOUSE">Warehouse</option>
+            <option value="BRANCH">Sucursal</option>
+          </select>
+          <input id="fromId" placeholder="ID origen (ej. WH-1 o BR-121)">
+        </div>
+        <div>
+          <label>Hacia (opcional)</label>
+          <select id="toType">
+            <option value="">—</option>
+            <option value="WAREHOUSE">Warehouse</option>
+            <option value="BRANCH">Sucursal</option>
+            <option value="PROVIDER">Prestador</option>
+          </select>
+          <input id="toId" placeholder="ID destino (ej. BR-121 o RUT prestador)">
+        </div>
+      </div>
+      <textarea id="notes" placeholder="Notas (opcional)"></textarea>
+    </section>
+
+    <section class="card">
+      <h2>Escáner</h2>
+      <div class="grid">
+        <div>
+          <label for="cameraSelect">Cámara</label>
+          <select id="cameraSelect"></select>
+        </div>
+        <div>
+          <label>&nbsp;</label>
+          <button id="startBtn">Iniciar</button>
+          <button id="stopBtn">Detener</button>
+        </div>
+      </div>
+      <video id="preview" playsinline></video>
+      <div class="grid">
+        <input id="manualCode" placeholder="Pega código (VSER|... o VLOT|...) o URL con ?c=">
+        <button id="sendManual">Enviar manual</button>
+      </div>
+      <div id="status" class="status"></div>
+      <div id="queue" class="queue"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>MVP · ZXing + Google Sign‑In · Apps Script</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
